@@ -56,69 +56,73 @@ const comunas = Array.from({ length: 15 }, (_, i) => ({
 export default function RelevamientoUsoLanding() {
   return (
     <main
-      className={`${montserrat.className} min-h-screen bg-[#07111F] text-white px-6 py-16`}
+      className={`${montserrat.className} min-h-screen overflow-x-hidden bg-[#07111F] text-white px-4 py-10 md:px-6 md:py-16`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="relative text-center leading-[0.85] tracking-[-0.08em] mb-8">
+        {/* HERO */}
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="relative text-center leading-[0.9] tracking-[-0.06em] mb-6 text-balance">
             <span
               className="
-      block
-      text-7xl
-      md:text-[10rem]
-      font-black
-      text-white
-      drop-shadow-[0_0_30px_rgba(255,255,255,0.08)]
-    "
+              block
+              text-[3.4rem]
+              sm:text-7xl
+              md:text-[10rem]
+              font-black
+              text-white
+              drop-shadow-[0_0_30px_rgba(255,255,255,0.08)]
+            "
             >
               Relevamiento
             </span>
 
             <span
               className="
-      relative
-      inline-block
-      text-6xl
-      md:text-[8rem]
-      font-black
-      bg-gradient-to-r
-      from-[#8DE2D6]
-      via-[#FFCB00]
-      to-[#8DE2D6]
-      bg-clip-text
-      text-transparent
-      drop-shadow-[0_0_25px_rgba(141,226,214,0.25)]
-    "
+              relative
+              inline-block
+              text-[3rem]
+              sm:text-6xl
+              md:text-[8rem]
+              font-black
+              bg-gradient-to-r
+              from-[#8DE2D6]
+              via-[#FFCB00]
+              to-[#8DE2D6]
+              bg-clip-text
+              text-transparent
+              drop-shadow-[0_0_25px_rgba(141,226,214,0.25)]
+            "
             >
               de Uso
             </span>
 
-            {/* Glow */}
             <div
               className="
-      absolute
-      inset-0
-      -z-10
-      blur-3xl
-      opacity-20
-      bg-gradient-to-r
-      from-[#8DE2D6]
-      via-[#FFCB00]
-      to-[#153244]
-    "
+              absolute
+              inset-0
+              -z-10
+              blur-3xl
+              opacity-20
+              bg-gradient-to-r
+              from-[#8DE2D6]
+              via-[#FFCB00]
+              to-[#153244]
+            "
             />
           </h1>
-          <p className="text-white/60 text-xl max-w-2xl mx-auto">
+
+          <p className="text-white/60 text-base md:text-xl max-w-xl mx-auto leading-relaxed text-balance px-2">
             Accedé rápidamente a formularios, mapas y documentación del
             operativo.
           </p>
         </div>
 
-        <div className="grid gap-5 mb-20">
+        {/* BOTONES */}
+        <div className="grid gap-4 mb-16 max-w-xl mx-auto">
           <a
             href="/Capacitacion.pdf"
             target="_blank"
-            className="rounded-3xl bg-[#FFCB00] text-[#153244] px-8 py-6 text-2xl font-bold text-center hover:scale-[1.01] transition-all duration-300"
+            className="rounded-3xl bg-[#FFCB00] text-[#153244] px-6 py-4 text-lg md:text-2xl font-bold text-center hover:scale-[1.01] transition-all duration-300"
           >
             Ver Capacitación
           </a>
@@ -126,7 +130,7 @@ export default function RelevamientoUsoLanding() {
           <a
             href="https://docs.google.com/spreadsheets/d/1aFWOo8L7iMjjwT6ui5w08kXbsG3eNHnZDdNQqOMxXJw/edit?gid=1859004877#gid=1859004877"
             target="_blank"
-            className="rounded-3xl border border-white/10 bg-[#122033] px-8 py-6 text-2xl font-bold text-center hover:border-[#8DE2D6]/40 transition-all duration-300"
+            className="rounded-3xl border border-white/10 bg-[#122033] px-6 py-4 text-lg md:text-2xl font-bold text-center hover:border-[#8DE2D6]/40 transition-all duration-300"
           >
             Drive Espacios Verdes
           </a>
@@ -134,27 +138,31 @@ export default function RelevamientoUsoLanding() {
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSc8khUx2iVitzAx2WNtZMRXL1-x38k3WxxOZGlC_jXLyp_Xeg/viewform"
             target="_blank"
-            className="rounded-3xl border border-[#8DE2D6]/20 bg-[#8DE2D6]/10 text-[#8DE2D6] px-8 py-6 text-2xl font-bold text-center hover:bg-[#8DE2D6]/20 transition-all duration-300"
+            className="rounded-3xl border border-[#8DE2D6]/20 bg-[#8DE2D6]/10 text-[#8DE2D6] px-6 py-4 text-lg md:text-2xl font-bold text-center hover:bg-[#8DE2D6]/20 transition-all duration-300"
           >
             Form Asignación de Polígonos
           </a>
         </div>
 
+        {/* FORMULARIOS */}
         <section className="mb-24">
-          <h2 className="text-5xl font-black mb-4">Formularios</h2>
-          <p className="text-white/60 text-xl mb-10">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-balance">
+            Formularios
+          </h2>
+
+          <p className="text-white/60 text-base md:text-xl mb-8 md:mb-10">
             Accedé a los formularios de las distintas ofertas.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {formularios.map((item) => (
               <a
                 key={item.title}
                 href={item.link}
                 target="_blank"
-                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-[#122033] hover:border-[#8DE2D6]/40 transition-all duration-500"
+                className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#122033] hover:border-[#8DE2D6]/40 transition-all duration-500"
               >
-                <div className="relative h-[420px]">
+                <div className="relative h-[320px] md:h-[420px]">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -163,20 +171,20 @@ export default function RelevamientoUsoLanding() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/70 to-transparent" />
 
-                  <div className="absolute top-6 left-6 bg-[#FFCB00] text-[#153244] px-5 py-2 rounded-full text-sm font-black tracking-wide">
+                  <div className="absolute top-5 left-5 bg-[#FFCB00] text-[#153244] px-4 py-2 rounded-full text-xs md:text-sm font-black tracking-wide">
                     FORMULARIO
                   </div>
 
-                  <div className="absolute bottom-0 left-0 w-full p-8 text-center flex flex-col items-center">
-                    <h3 className="text-5xl font-black mb-4 leading-none">
+                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-center flex flex-col items-center">
+                    <h3 className="text-3xl md:text-5xl font-black mb-3 leading-none text-balance">
                       {item.title}
                     </h3>
 
-                    <p className="text-white/75 text-lg max-w-md mb-6">
+                    <p className="text-white/75 text-sm md:text-lg max-w-md mb-5">
                       {item.description}
                     </p>
 
-                    <div className="w-14 h-14 rounded-full bg-[#8DE2D6] text-[#153244] flex items-center justify-center text-2xl font-black">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#8DE2D6] text-[#153244] flex items-center justify-center text-2xl font-black">
                       +
                     </div>
                   </div>
@@ -186,32 +194,32 @@ export default function RelevamientoUsoLanding() {
           </div>
         </section>
 
+        {/* MAPAS */}
         <section>
-          <h2 className="text-5xl font-black mb-4">My Maps</h2>
-          <p className="text-white/60 text-xl mb-10">
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            My Maps
+          </h2>
+
+          <p className="text-white/60 text-base md:text-xl mb-8 md:mb-10">
             Accedé a los mapas organizados por comuna.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {comunas.map((item, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            {comunas.map((item) => (
               <a
                 key={item.name}
                 href={item.link}
                 target="_blank"
-                className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b from-[#122033] to-[#0B1624] p-7 hover:border-[#8DE2D6]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
+                className="group relative overflow-hidden rounded-[24px] border border-white/10 bg-gradient-to-b from-[#122033] to-[#0B1624] p-5 md:p-7 hover:border-[#8DE2D6]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#8DE2D6]/10 via-transparent to-[#FFCB00]/10" />
 
                 <div className="relative flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="absolute inset-0 rounded-3xl bg-[#8DE2D6]/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-                  </div>
-
-                  <div className="inline-flex items-center rounded-full border border-[#8DE2D6]/20 bg-[#8DE2D6]/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#8DE2D6] mb-5">
+                  <div className="inline-flex items-center rounded-full border border-[#8DE2D6]/20 bg-[#8DE2D6]/10 px-4 py-1 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#8DE2D6] mb-5">
                     My Maps
                   </div>
 
-                  <h3 className="text-3xl font-black tracking-[-0.04em] text-white mb-5 group-hover:text-[#8DE2D6] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-black tracking-[-0.04em] text-white mb-5 group-hover:text-[#8DE2D6] transition-colors duration-300">
                     {item.name}
                   </h3>
 
@@ -222,7 +230,7 @@ export default function RelevamientoUsoLanding() {
                   </div>
                 </div>
 
-                <div className="absolute top-5 right-5 w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/40 text-sm opacity-0 group-hover:opacity-100 transition duration-300">
+                <div className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/40 text-sm opacity-0 group-hover:opacity-100 transition duration-300">
                   ↗
                 </div>
 
@@ -233,7 +241,7 @@ export default function RelevamientoUsoLanding() {
         </section>
 
         {/* FOOTER */}
-        <footer className="mt-32 border-t border-white/10 pt-10 pb-4">
+        <footer className="mt-20 md:mt-32 border-t border-white/10 pt-10 pb-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="text-2xl font-black tracking-[-0.04em] mb-2">
@@ -252,7 +260,7 @@ export default function RelevamientoUsoLanding() {
               <img
                 src="/ba-logo.png"
                 alt="BA Logo"
-                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300"
+                className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition duration-300"
               />
             </div>
           </div>
