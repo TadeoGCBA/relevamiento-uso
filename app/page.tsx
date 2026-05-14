@@ -180,9 +180,7 @@ export default function RelevamientoUsoLanding() {
                       {item.title}
                     </h3>
 
-                    <p className="text-white/75 text-sm md:text-lg max-w-md mb-5">
-                      {item.description}
-                    </p>
+            
 
                     <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#8DE2D6] text-[#153244] flex items-center justify-center text-2xl font-black">
                       +
