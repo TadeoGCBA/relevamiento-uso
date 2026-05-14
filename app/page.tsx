@@ -8,25 +8,25 @@ const montserrat = Montserrat({
 const formularios = [
   {
     title: "Patio de Juego",
-    description: "Relevamiento y observación de patios de juegos.",
+
     image: "/Patio de Juegos.png",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSdurlNK2rIjUBEtUSggP3QUXJNndcr81LV2vXNkYISmCOaSsw/viewform",
   },
   {
     title: "Postas Aeróbicas",
-    description: "Registro de uso y actividad en postas aeróbicas.",
+    
     image: "/Postas Aerobicas.png",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSe_rHTyJrYQaVZS3Z9nKpHFZ7Ce8okfYkEXHZPY4DCSEAOCPQ/viewform",
   },
   {
     title: "Áreas Deportivas",
-    description: "Observación y ocupación en áreas deportivas.",
+
     image: "/Areas Deportivas.png",
     link: "https://docs.google.com/forms/d/e/1FAIpQLScG8s4o7GC57DpaIbPUvd4xYsqoJpW55_j7Zsho7cmFzRGbUQ/viewform",
   },
   {
     title: "Caniles",
-    description: "Relevamiento de circulación en espacios caninos.",
+
     image: "/Caniles.png",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSeEqpPxfm1vDIDCLve6EzhAjwguXj2grbcggtgB0C7ktzZ5Fg/viewform",
   },
