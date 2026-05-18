@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GOGP | Relevamiento de Uso",
-  description: "Esta plataforma centraliza el acceso a formularios y mapas.",
+  title: "Formulario | Relevamiento de Uso",
+  description: "Formulario de Ofertas de Espacios Verdes",
+  icons: {
+    icon: "/favicon.ico?v=1", // El ?v=1 obliga a Vercel y al navegador a leer el archivo nuevo
+  },
 };
 
 export default function RootLayout({
