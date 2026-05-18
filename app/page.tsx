@@ -120,10 +120,10 @@ export default function RelevamientoUsoLanding() {
             >
               <div>
                 <span className="block text-xs font-black tracking-widest uppercase mb-1 opacity-80">
-                  FORMULARIO OFICIAL
+                  Formulario de Ofertas
                 </span>
                 <h2 className="text-xl md:text-2xl font-black tracking-tight leading-tight">
-                  Presiona aquí para ir al formulario de Uso
+                  Presiona aquí para ir al Formulario
                 </h2>
               </div>
 
