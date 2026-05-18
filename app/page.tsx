@@ -5,33 +5,6 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const formularios = [
-  {
-    title: "Patio de Juego",
-
-    image: "/Patio de Juegos.png",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSdurlNK2rIjUBEtUSggP3QUXJNndcr81LV2vXNkYISmCOaSsw/viewform",
-  },
-  {
-    title: "Postas Aeróbicas",
-    
-    image: "/Postas Aerobicas.png",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSe_rHTyJrYQaVZS3Z9nKpHFZ7Ce8okfYkEXHZPY4DCSEAOCPQ/viewform",
-  },
-  {
-    title: "Áreas Deportivas",
-
-    image: "/Areas Deportivas.png",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLScG8s4o7GC57DpaIbPUvd4xYsqoJpW55_j7Zsho7cmFzRGbUQ/viewform",
-  },
-  {
-    title: "Caniles",
-
-    image: "/Caniles.png",
-    link: "https://docs.google.com/forms/d/e/1FAIpQLSeEqpPxfm1vDIDCLve6EzhAjwguXj2grbcggtgB0C7ktzZ5Fg/viewform",
-  },
-];
-
 const comunas = Array.from({ length: 15 }, (_, i) => ({
   name: `Comuna ${i + 1}`,
   link: [
@@ -112,8 +85,7 @@ export default function RelevamientoUsoLanding() {
           </h1>
 
           <p className="text-white/60 text-base md:text-xl max-w-xl mx-auto leading-relaxed text-balance px-2">
-            Accedé rápidamente a formularios, mapas y documentación del
-            operativo.
+            Accedé rápidamente a formularios, mapas y documentación del operativo.
           </p>
         </div>
 
@@ -144,52 +116,26 @@ export default function RelevamientoUsoLanding() {
           </a>
         </div>
 
-        {/* FORMULARIOS */}
-        <section className="mb-24">
+        {/* NUEVA SECCIÓN: BOTÓN AL FORMULARIO ÚNICO */}
+        <section className="mb-24 max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-balance">
             Formularios
           </h2>
-
-          <p className="text-white/60 text-base md:text-xl mb-8 md:mb-10">
-            Accedé a los formularios de las distintas ofertas.
+          <p className="text-white/60 text-base md:text-xl mb-8">
+            Ingresá al formulario unificado para realizar el relevamiento.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {formularios.map((item) => (
-              <a
-                key={item.title}
-                href={item.link}
-                target="_blank"
-                className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#122033] hover:border-[#8DE2D6]/40 transition-all duration-500"
-              >
-                <div className="relative h-[320px] md:h-[420px]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/70 to-transparent" />
-
-                  <div className="absolute top-5 left-5 bg-[#FFCB00] text-[#153244] px-4 py-2 rounded-full text-xs md:text-sm font-black tracking-wide">
-                    FORMULARIO
-                  </div>
-
-                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-center flex flex-col items-center">
-                    <h3 className="text-3xl md:text-5xl font-black mb-3 leading-none text-balance">
-                      {item.title}
-                    </h3>
-
-            
-
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#8DE2D6] text-[#153244] flex items-center justify-center text-2xl font-black">
-                      +
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
+          
+          <a
+            href="https://form-relevamientouso-8uzs.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-3 rounded-[32px] border border-[#8DE2D6]/30 bg-gradient-to-r from-[#122033] to-[#0B1624] px-8 py-6 text-xl md:text-3xl font-black text-white hover:border-[#8DE2D6] hover:shadow-[0_0_30px_rgba(141,226,214,0.15)] transition-all duration-300 w-full sm:w-auto"
+          >
+            Presiona aquí para ir al formulario de Uso
+            <span className="text-[#8DE2D6] group-hover:translate-x-2 transition-transform duration-300 text-2xl md:text-4xl">
+              →
+            </span>
+          </a>
         </section>
 
         {/* MAPAS */}
@@ -247,8 +193,7 @@ export default function RelevamientoUsoLanding() {
               </h3>
 
               <p className="text-white/50 text-sm max-w-md leading-relaxed">
-                Plataforma de acceso a formularios, mapas y documentación del
-                operativo de espacios verdes.
+                Plataforma de acceso a formularios, mapas y documentación del operativo de espacios verdes.
               </p>
             </div>
 
