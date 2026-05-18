@@ -119,7 +119,7 @@ export default function RelevamientoUsoLanding() {
         {/* NUEVA SECCIÓN: BOTÓN AL FORMULARIO ÚNICO */}
         <section className="mb-24 max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-balance">
-            Formularios
+            Formulario de Relevamiento de Uso
           </h2>
           <p className="text-white/60 text-base md:text-xl mb-8">
             Ingresá al formulario unificado para realizar el relevamiento.
