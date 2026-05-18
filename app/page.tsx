@@ -30,10 +30,9 @@ const comunas = Array.from({ length: 15 }, (_, i) => ({
 }));
 
 export default function RelevamientoUsoLanding() {
-  // Arrancamos en false (claro) por defecto para evitar problemas de desajuste en el servidor (SSR)
   const [darkMode, setDarkMode] = useState(false);
 
-  // Al cargar la página, verificamos si ya existe una preferencia guardada en el navegador
+  // Carga la preferencia guardada en el navegador al montar el componente
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -41,7 +40,7 @@ export default function RelevamientoUsoLanding() {
     }
   }, []);
 
-  // Función para cambiar el modo y guardarlo automáticamente en el almacenamiento local
+  // Guarda la preferencia cada vez que el usuario la cambia
   const toggleDarkMode = () => {
     const nextMode = !darkMode;
     setDarkMode(nextMode);
@@ -269,5 +268,4 @@ export default function RelevamientoUsoLanding() {
       </div>
     </main>
   );
-}
 }
