@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -30,21 +30,36 @@ const comunas = Array.from({ length: 15 }, (_, i) => ({
 }));
 
 export default function RelevamientoUsoLanding() {
+  // Arrancamos en false (claro) por defecto para evitar problemas de desajuste en el servidor (SSR)
   const [darkMode, setDarkMode] = useState(false);
+
+  // Al cargar la página, verificamos si ya existe una preferencia guardada en el navegador
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+    }
+  }, []);
+
+  // Función para cambiar el modo y guardarlo automáticamente en el almacenamiento local
+  const toggleDarkMode = () => {
+    const nextMode = !darkMode;
+    setDarkMode(nextMode);
+    localStorage.setItem("theme", nextMode ? "dark" : "light");
+  };
 
   return (
     <main
-      className={`${
-        montserrat.className
-      } min-h-screen overflow-x-hidden transition-colors duration-500 px-4 py-10 md:px-6 md:py-16 ${
+      className={`${montserrat.className} min-h-screen overflow-x-hidden transition-colors duration-500 px-4 py-10 md:px-6 md:py-16 ${
         darkMode ? "bg-[#07111F] text-white" : "bg-[#EDF2F7] text-[#153244]"
       }`}
     >
       <div className="max-w-7xl mx-auto">
+        
         {/* INTERRUPTOR DE MODO CLARO / OSCURO */}
         <div className="flex justify-end mb-6">
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={toggleDarkMode}
             className={`flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
               darkMode
                 ? "border-white/10 bg-white/5 text-white hover:bg-white/10"
@@ -68,8 +83,8 @@ export default function RelevamientoUsoLanding() {
 
             <span
               className={`inline-block text-[2.8rem] sm:text-6xl md:text-[6.5rem] font-black bg-gradient-to-r ${
-                darkMode
-                  ? "from-[#8DE2D6] via-white to-[#8DE2D6]"
+                darkMode 
+                  ? "from-[#8DE2D6] via-white to-[#8DE2D6]" 
                   : "from-[#153244] via-[#8DE2D6] to-[#153244]"
               } bg-clip-text text-transparent`}
             >
@@ -77,17 +92,14 @@ export default function RelevamientoUsoLanding() {
             </span>
           </h1>
 
-          <p
-            className={`text-base md:text-xl max-w-xl mx-auto leading-relaxed text-balance px-2 ${
-              darkMode ? "text-white/60" : "text-[#475569]"
-            }`}
-          >
-            Accedé rápidamente a formularios, mapas y documentación oficial del
-            operativo.
+          <p className={`text-base md:text-xl max-w-xl mx-auto leading-relaxed text-balance px-2 ${
+            darkMode ? "text-white/60" : "text-[#475569]"
+          }`}>
+            Accedé rápidamente a formularios, mapas y documentación oficial del operativo.
           </p>
         </div>
 
-        {/* BOTÓN PRINCIPAL ACCESO DIRECTO (VERSION PROFESIONAL Y APB) */}
+        {/* BOTÓN PRINCIPAL ACCESO DIRECTO */}
         <section className="mb-16 max-w-2xl mx-auto text-center">
           <div className="w-full">
             <a
@@ -116,13 +128,9 @@ export default function RelevamientoUsoLanding() {
                 </h2>
               </div>
 
-              <div
-                className={`flex items-center justify-center w-12 h-12 rounded-full shrink-0 shadow-sm ${
-                  darkMode
-                    ? "bg-[#07111F] text-[#8DE2D6]"
-                    : "bg-white text-[#153244]"
-                }`}
-              >
+              <div className={`flex items-center justify-center w-12 h-12 rounded-full shrink-0 shadow-sm ${
+                darkMode ? "bg-[#07111F] text-[#8DE2D6]" : "bg-white text-[#153244]"
+              }`}>
                 <span className="text-xl font-bold">→</span>
               </div>
             </a>
@@ -131,6 +139,7 @@ export default function RelevamientoUsoLanding() {
 
         {/* BOTONES SECUNDARIOS / DOCUMENTACIÓN */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20 max-w-4xl mx-auto">
+          
           {/* PRIMER BOTÓN: AMARILLO */}
           <a
             href="/Capacitacion.pdf"
@@ -169,24 +178,16 @@ export default function RelevamientoUsoLanding() {
           >
             Asignación de Polígonos
           </a>
+
         </div>
 
         {/* MAPAS */}
-        <section
-          className="border-t pt-14 opacity-100 transition-colors duration-500"
-          style={{
-            borderColor: darkMode
-              ? "rgba(255,255,255,0.08)"
-              : "rgba(21,50,68,0.15)",
-          }}
+        <section className="border-t pt-14 opacity-100 transition-colors duration-500"
+          style={{ borderColor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(21,50,68,0.15)" }}
         >
           <div className="mb-8">
             <h2 className="text-3xl font-black tracking-tight mb-2">My Maps</h2>
-            <p
-              className={`text-sm md:text-base ${
-                darkMode ? "text-white/60" : "text-[#475569]"
-              }`}
-            >
+            <p className={`text-sm md:text-base ${darkMode ? "text-white/60" : "text-[#475569]"}`}>
               Mapas de relevamiento organizados de forma oficial por Comuna.
             </p>
           </div>
@@ -204,11 +205,9 @@ export default function RelevamientoUsoLanding() {
                 }`}
               >
                 <div className="flex flex-col items-center text-center">
-                  <span
-                    className={`text-[10px] font-extrabold uppercase tracking-widest mb-3 ${
-                      darkMode ? "text-[#8DE2D6]" : "text-[#153244]/70"
-                    }`}
-                  >
+                  <span className={`text-[10px] font-extrabold uppercase tracking-widest mb-3 ${
+                    darkMode ? "text-[#8DE2D6]" : "text-[#153244]/70"
+                  }`}>
                     MAPA DE USO
                   </span>
 
@@ -218,20 +217,16 @@ export default function RelevamientoUsoLanding() {
 
                   {/* LÍNEAS DE DECORACIÓN */}
                   <div className="flex items-center gap-1.5">
-                    <div
-                      className={`w-8 h-[4px] rounded-full transition-colors duration-500 ${
-                        darkMode ? "bg-white/40" : "bg-[#153244]"
-                      }`}
-                    />
+                    <div className={`w-8 h-[4px] rounded-full transition-colors duration-500 ${
+                      darkMode ? "bg-white/40" : "bg-[#153244]"
+                    }`} />
                     <div className="w-4 h-[4px] rounded-full bg-[#FFCB00]" />
                   </div>
                 </div>
 
-                <div
-                  className={`absolute top-3 right-3 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    darkMode ? "text-white/40" : "text-[#153244]/40"
-                  }`}
-                >
+                <div className={`absolute top-3 right-3 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                  darkMode ? "text-white/40" : "text-[#153244]/40"
+                }`}>
                   ↗
                 </div>
               </a>
@@ -240,23 +235,16 @@ export default function RelevamientoUsoLanding() {
         </section>
 
         {/* FOOTER */}
-        <footer
-          className={`mt-24 border-t pt-10 pb-4 transition-colors duration-500 ${
-            darkMode ? "border-white/10" : "border-[#153244]/10"
-          }`}
-        >
+        <footer className={`mt-24 border-t pt-10 pb-4 transition-colors duration-500 ${
+          darkMode ? "border-white/10" : "border-[#153244]/10"
+        }`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="text-xl font-black tracking-tight mb-1">
                 Relevamiento de Uso
               </h3>
-              <p
-                className={`text-xs max-w-md ${
-                  darkMode ? "text-white/40" : "text-[#475569]"
-                }`}
-              >
-                Plataforma institucional para la carga de datos del operativo de
-                espacios verdes.
+              <p className={`text-xs max-w-md ${darkMode ? "text-white/40" : "text-[#475569]"}`}>
+                Plataforma institucional para la carga de datos del operativo de espacios verdes.
               </p>
             </div>
 
@@ -265,21 +253,15 @@ export default function RelevamientoUsoLanding() {
                 src="/ba-logo.png"
                 alt="BA Logo"
                 className={`h-11 w-auto object-contain transition duration-300 ${
-                  darkMode
-                    ? "opacity-70 hover:opacity-100"
-                    : "opacity-90 hover:opacity-100"
+                  darkMode ? "opacity-70 hover:opacity-100" : "opacity-90 hover:opacity-100"
                 }`}
               />
             </div>
           </div>
 
-          <div
-            className={`mt-10 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-4 text-xs ${
-              darkMode
-                ? "border-white/5 text-white/30"
-                : "border-[#153244]/10 text-[#475569]"
-            }`}
-          >
+          <div className={`mt-10 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-4 text-xs ${
+            darkMode ? "border-white/5 text-white/30" : "border-[#153244]/10 text-[#475569]"
+          }`}>
             <p>Gobierno de la Ciudad de Buenos Aires</p>
             <p>© 2026 · Gerencia Operativa de Guardaparques</p>
           </div>
@@ -287,4 +269,5 @@ export default function RelevamientoUsoLanding() {
       </div>
     </main>
   );
+}
 }
