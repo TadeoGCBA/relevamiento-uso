@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Formulario | Relevamiento de Uso",
-  description: "Formulario de Ofertas de Espacios Verdes",
+  title: "GOGP| Relevamiento de Uso",
+  description: "Plataforma que centraliza todos los links de relevamiento de uso.",
   icons: {
     icon: "/favicon.ico?v=1", // El ?v=1 obliga a Vercel y al navegador a leer el archivo nuevo
   },
