@@ -11,21 +11,35 @@ const montserrat = Montserrat({
 const comunas = Array.from({ length: 15 }, (_, i) => ({
   name: `Comuna ${i + 1}`,
   link: [
-    "https://www.google.com/maps/d/edit?mid=1570S-Ng2ew5eQWcAIRGI_rc6HptgnTA&ll=-34.60625668278807%2C-58.35315224460291&z=14",
-    "https://www.google.com/maps/d/edit?mid=1oird3UsNTUD20Vm_eiA-1QexpHc27mo&ll=-34.603326153768826%2C-58.38654131454851&z=14",
-    "https://www.google.com/maps/d/edit?mid=1jUrKjIXGR0-NHDse7fPaN5O2sn3ApGE&ll=-34.612792382614174%2C-58.39675516647722&z=14",
-    "https://www.google.com/maps/d/edit?mid=1gJMzK59VLBdOZqT-LiQi2srws3-FPYQ&ll=-34.64167661750612%2C-58.367767779836626&z=14",
-    "https://www.google.com/maps/d/edit?mid=1b0Sdl6PDgbOaSY4UsXCEwEtmFRb9h0E&ll=-34.62321105079643%2C-58.40044588608171&z=14",
-    "https://www.google.com/maps/d/edit?mid=1LL1eos2_4BMq0AqEMxuJ9uG5kOWFN0c&ll=-34.64812592698393%2C-58.47702875000002&z=13",
-    "https://www.google.com/maps/d/edit?mid=1F-YI8LTWAvKBHLBvUSMclIAZzwoHM48&ll=-34.64812592698393%2C-58.47702875000002&z=13",
-    "https://www.google.com/maps/d/edit?mid=1MsujKyg3RVRhrNww1BgaM3k4aSMIFmA&ll=-34.64812592698393%2C-58.47702875000002&z=13",
-    "https://www.google.com/maps/d/edit?mid=1StUtSnlgjeDqVyczkaiSjgygl5jhkU0&ll=-34.648095132678684%2C-58.47702875000002&z=13",
-    "https://www.google.com/maps/d/edit?mid=1lVNEsGIK8MbpwekXzv8YYn3OTMYjpq8&ll=-34.63056040044627%2C-58.50105399660798&z=15",
-    "https://www.google.com/maps/d/edit?mid=1CY4CBArFpD3dDxjGOMllTIQQJe20rgY&ll=-34.571967922502196%2C-58.46047360000001&z=13",
-    "https://www.google.com/maps/d/edit?mid=170kjw9FQyJQZ3j7yMtISdy-yp3o6zTA&ll=-34.571967922502196%2C-58.46047360000001&z=13",
-    "https://www.google.com/maps/d/edit?mid=10c-p5_gfvoXZ6XiMNu2hxzQvd6nx8xo&ll=-34.571967922502196%2C-58.46047360000001&z=13",
-    "https://www.google.com/maps/d/edit?mid=1j0UNef7JdgXIeXvhy6wtnBypk8_r2HM&ll=-34.571967922502196%2C-58.46047360000001&z=13",
-    "https://www.google.com/maps/d/edit?mid=1SOe0lET_vKghQCBIHOWRfvoeVxSLS18&ll=-34.571967922502196%2C-58.46047360000001&z=13",
+"https://www.google.com/maps/d/edit?mid=1MIZeeFKlryvT5Bs-ZueipP2vRSa2RLw&ll=-34.60648306595648%2C-58.37034780000002&z=14",
+
+"https://www.google.com/maps/d/edit?mid=18wdspRiorxflMvtI3hweNm6WHoCdPWw&ll=-34.59010193664044%2C-58.397030849999986&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1tCSuHM4DAu29jhJJ1TJhPM5KbuDNExU&ll=-34.61641939318408%2C-58.403678199999995&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1v222jJ6LOkSSTe3v_2n022rPEollLwc&ll=-34.64224943448272%2C-58.393762349999975&z=14",
+
+"https://www.google.com/maps/d/edit?mid=1dEsUASw_w5V9_2UXuEO_-gjIoV8W70s&ll=-34.61425579278421%2C-58.388555249999996&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1JlS2TEXY9r6z6BuaTfST0CJFlEbB_0I&ll=-34.61328127033481%2C-58.44508734999998&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1zC4l5U3ssY-XqiZBr9p5Byy87NKIlRE&ll=-34.635569678950475%2C-58.448563099999994&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1msTHGhT09Qv05fZupNIMX-7ebrvoBpk&ll=-34.67503384156568%2C-58.46536944999999&z=14",
+
+"https://www.google.com/maps/d/edit?mid=10nMJeUbEmm6dhAXsid-fSiqsGKEWkaU&ll=-34.652257902531765%2C-58.49836835&z=14",
+
+"https://www.google.com/maps/d/edit?mid=11SQF66KGEhNbmzmxGYJ54uUCs19OuWc&ll=-34.628714554105784%2C-58.50523605000001&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1DQ3T-r-1RBrl5lIoMiFYqFgzX7MurM4&ll=-34.60517533151503%2C-58.49463145&z=15",
+
+"https://www.google.com/maps/d/edit?mid=1HNd8QnMu0UBz5u8F5AZ6OCu-6ZRGPdc&ll=-34.56645759691659%2C-58.488821949999995&z=14",
+
+"https://www.google.com/maps/d/edit?mid=1LRU2lNAMIaUnS53TXN_pBGcQDGKWm_c&ll=-34.555267555157826%2C-58.448883849999994&z=14",
+
+"https://www.google.com/maps/d/edit?mid=1CG1yKVtHoGjwv5FyY0Iq4XKxSfzqfeo&ll=-34.573012425624526%2C-58.421944800000006&z=14",
+
+"https://www.google.com/maps/d/edit?mid=1m4YgisBbCLxNLxa71zzzhYeEzGP8DwY&ll=-34.593315581933425%2C-58.462843600000014&z=15",
   ][i],
 }));
 
