@@ -176,7 +176,7 @@ export default function RelevamientoUsoLanding() {
                 : "bg-[#153244] text-white hover:bg-[#1f435c] shadow-md hover:shadow-lg"
             }`}
           >
-            Drive Espacios Verdes
+            Drive Seguimiento
           </a>
 
           {/* TERCER BOTÓN: VERDE AGUA 8DE2D6 */}
