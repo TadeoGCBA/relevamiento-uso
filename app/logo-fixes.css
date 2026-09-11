@@ -11,6 +11,11 @@ footer > img {
   object-fit: contain;
 }
 
+.dark .header-logo,
+.dark footer > img {
+  filter: grayscale(1) brightness(0) invert(1);
+}
+
 @media (max-width: 700px) {
   .header-logo {
     height: 34px;
