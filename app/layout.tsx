@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "GOGP| Relevamiento de Uso",
   description: "Plataforma que centraliza todos los links de relevamiento de uso.",
   icons: {
-    icon: "/favicon.ico?v=1", // El ?v=1 obliga a Vercel y al navegador a leer el archivo nuevo
+    icon: "/app-icon-192.png",
+    apple: "/app-icon-192.png",
   },
 };
 
