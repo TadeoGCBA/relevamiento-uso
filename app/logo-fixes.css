@@ -1,0 +1,40 @@
+.header-logo {
+  display: block;
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+footer > img {
+  width: auto;
+  height: 46px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .header-logo {
+    height: 34px;
+  }
+
+  footer > img {
+    order: 1;
+    height: 46px;
+    margin: 2px auto 8px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  footer > div {
+    order: 2;
+    align-items: center;
+  }
+
+  footer > span {
+    order: 3;
+  }
+}
