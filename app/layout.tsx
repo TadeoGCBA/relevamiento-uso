@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./logo-fixes.css";
+import "./polish.css";
 
 export const metadata: Metadata = {
   title: "GOGP| Relevamiento de Uso",
